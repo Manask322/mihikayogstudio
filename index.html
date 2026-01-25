@@ -121,23 +121,54 @@
             padding: 20px;
         }
 
-        .hero-content h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
+        .hero-subtitle {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--primary);
             margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: none;
+            line-height: 1.2;
         }
 
-        .hero-content p {
-            font-size: 1.3rem;
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .hero-badge {
+            background: rgba(201, 166, 107, 0.15);
+            border: 1px solid var(--primary);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--primary-light);
+            font-weight: 500;
+        }
+
+        .hero-tagline {
+            font-size: 1.15rem;
             margin-bottom: 35px;
             font-weight: 300;
-            color: var(--primary-light);
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
         }
 
         .hero-buttons {
@@ -811,12 +842,22 @@
                 display: block;
             }
 
-            .hero-content h1 {
-                font-size: 2.2rem;
+            .hero-subtitle {
+                font-size: 0.9rem;
+                letter-spacing: 2px;
             }
 
-            .hero-content p {
-                font-size: 1.1rem;
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-badge {
+                font-size: 0.8rem;
+                padding: 8px 15px;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
             }
 
             .section {
@@ -865,8 +906,14 @@
 <!-- Hero Section -->
 <section id="home" class="hero">
     <div class="hero-content">
-        <h1>Holistic & Personalised Yoga Training</h1>
-        <p>Transform Your Body, Mind & Spirit with Expert Guidance</p>
+        <p class="hero-subtitle">Train with a Champion</p>
+        <h1>National Yoga Champion<br>& 3x World Record Holder</h1>
+        <div class="hero-badges">
+            <span class="hero-badge">🏆 National Champion</span>
+            <span class="hero-badge">🌍 3x World Records (ABYM)</span>
+            <span class="hero-badge">🏅 Noble World Record</span>
+        </div>
+        <p class="hero-tagline">Experience world-class yoga training with Mihika Pinjarkar — where championship-level expertise meets personalized guidance.</p>
         <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary">Book 2-Day Trial</a>
             <a href="#contact" class="btn btn-secondary">Contact Me</a>
