@@ -13,18 +13,19 @@
             --primary-light: #E8D5B5;
             --secondary: #1A1A1A;
             --accent: #D4AF37;
-            --text-dark: #2d2d2d;
-            --text-light: #555;
-            --text-muted: #777;
+            --text-dark: #ffffff;
+            --text-light: #cccccc;
+            --text-muted: #999999;
             --white: #ffffff;
-            --black: #0D0D0D;
-            --bg-light: #fafafa;
-            --bg-section: #FBF8F3;
-            --bg-dark: #121212;
+            --black: #0A0A0A;
+            --bg-light: #0D0D0D;
+            --bg-section: #141414;
+            --bg-card: #1A1A1A;
+            --bg-dark: #0A0A0A;
             --gold-gradient: linear-gradient(135deg, #C9A66B 0%, #D4AF37 50%, #E8D5B5 100%);
-            --shadow: 0 4px 20px rgba(0,0,0,0.08);
-            --shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
-            --shadow-gold: 0 4px 20px rgba(201, 166, 107, 0.3);
+            --shadow: 0 4px 20px rgba(0,0,0,0.4);
+            --shadow-hover: 0 8px 30px rgba(0,0,0,0.5);
+            --shadow-gold: 0 4px 25px rgba(201, 166, 107, 0.4);
             --radius: 12px;
             --transition: all 0.3s ease;
         }
@@ -41,8 +42,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            color: var(--text-dark);
-            background: var(--white);
+            color: var(--text-light);
+            background: var(--black);
             line-height: 1.7;
         }
 
@@ -188,7 +189,7 @@
         .section-title {
             text-align: center;
             font-size: 2.2rem;
-            color: var(--text-dark);
+            color: var(--primary);
             margin-bottom: 15px;
             font-weight: 600;
         }
@@ -220,19 +221,19 @@
         }
 
         .pillar-card {
-            background: var(--white);
+            background: var(--bg-card);
             padding: 40px 30px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             text-align: center;
             transition: var(--transition);
-            border-bottom: 3px solid transparent;
+            border: 1px solid #2a2a2a;
         }
 
         .pillar-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-gold);
-            border-bottom: 3px solid var(--primary);
+            border-color: var(--primary);
         }
 
         .pillar-icon {
@@ -243,7 +244,7 @@
         .pillar-card h3 {
             font-size: 1.3rem;
             margin-bottom: 12px;
-            color: var(--primary-dark);
+            color: var(--primary);
         }
 
         .pillar-card p {
@@ -318,11 +319,11 @@
         }
 
         .tag {
-            background: var(--primary-light);
+            background: transparent;
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
-            color: var(--primary-dark);
+            color: var(--primary);
             border: 1px solid var(--primary);
         }
 
@@ -336,7 +337,7 @@
         }
 
         .why-card {
-            background: var(--white);
+            background: var(--bg-card);
             padding: 35px 25px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
@@ -352,7 +353,7 @@
         .why-card h3 {
             font-size: 1.15rem;
             margin-bottom: 12px;
-            color: var(--primary-dark);
+            color: var(--primary);
         }
 
         .why-card p {
@@ -370,7 +371,7 @@
             text-align: center;
             font-size: 1.2rem;
             font-weight: 600;
-            color: var(--text-dark);
+            color: var(--primary-light);
             margin: 40px 0 25px;
         }
 
@@ -382,13 +383,13 @@
         }
 
         .service-card {
-            background: var(--white);
+            background: var(--bg-card);
             padding: 30px 20px;
             border-radius: var(--radius);
             text-align: center;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            border: 1px solid transparent;
+            border: 1px solid #2a2a2a;
         }
 
         .service-card:hover {
@@ -404,7 +405,7 @@
 
         .service-card h4 {
             font-size: 1rem;
-            color: var(--text-dark);
+            color: var(--text-light);
             font-weight: 500;
         }
 
@@ -495,19 +496,20 @@
         }
 
         .collab-tag {
-            background: var(--white);
+            background: var(--bg-card);
             padding: 15px 30px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             font-weight: 500;
-            color: var(--text-dark);
-            border: 1px solid var(--primary-light);
+            color: var(--text-light);
+            border: 1px solid #2a2a2a;
             transition: var(--transition);
         }
 
         .collab-tag:hover {
             border-color: var(--primary);
             box-shadow: var(--shadow-gold);
+            color: var(--primary);
         }
 
         /* Testimonials */
@@ -520,7 +522,7 @@
         }
 
         .testimonial-card {
-            background: var(--white);
+            background: var(--bg-card);
             padding: 35px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
@@ -534,7 +536,7 @@
         }
 
         .testimonial-text {
-            color: var(--text-light);
+            color: var(--text-muted);
             font-style: italic;
             margin-bottom: 20px;
             font-size: 0.98rem;
@@ -542,7 +544,7 @@
 
         .testimonial-author {
             font-weight: 600;
-            color: var(--text-dark);
+            color: var(--primary-light);
         }
 
         /* Instagram Section */
@@ -580,16 +582,17 @@
         }
 
         .contact-form {
-            background: var(--white);
+            background: var(--bg-card);
             padding: 40px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
+            border: 1px solid #2a2a2a;
         }
 
         .contact-form h3 {
             font-size: 1.4rem;
             margin-bottom: 25px;
-            color: var(--text-dark);
+            color: var(--primary);
         }
 
         .form-group {
@@ -600,7 +603,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
-            color: var(--text-dark);
+            color: var(--text-light);
             font-size: 0.95rem;
         }
 
@@ -608,17 +611,24 @@
         .form-group textarea {
             width: 100%;
             padding: 14px 18px;
-            border: 1px solid #ddd;
+            border: 1px solid #333;
             border-radius: 8px;
             font-family: inherit;
             font-size: 1rem;
             transition: var(--transition);
+            background: var(--bg-dark);
+            color: var(--text-light);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #666;
         }
 
         .form-group textarea {
@@ -646,7 +656,7 @@
         .contact-info h3 {
             font-size: 1.4rem;
             margin-bottom: 25px;
-            color: var(--text-dark);
+            color: var(--primary);
         }
 
         .contact-item {
@@ -661,7 +671,8 @@
             font-size: 1.3rem;
             width: 45px;
             height: 45px;
-            background: var(--primary-light);
+            background: var(--bg-card);
+            border: 1px solid var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -678,28 +689,31 @@
         }
 
         .availability-note {
-            background: var(--primary-light);
+            background: var(--bg-card);
             padding: 20px;
             border-radius: var(--radius);
             margin-top: 30px;
             border-left: 4px solid var(--primary);
+            border: 1px solid #2a2a2a;
+            border-left: 4px solid var(--primary);
         }
 
         .availability-note h4 {
-            color: var(--primary-dark);
+            color: var(--primary);
             margin-bottom: 8px;
         }
 
         .availability-note p {
-            color: var(--text-dark);
+            color: var(--text-muted);
             font-size: 0.95rem;
         }
 
         /* Footer */
         footer {
-            background: var(--text-dark);
+            background: var(--black);
             color: var(--white);
             padding: 50px 5% 30px;
+            border-top: 1px solid #1a1a1a;
         }
 
         .footer-content {
