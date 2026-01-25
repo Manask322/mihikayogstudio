@@ -8,18 +8,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #5a8f7b;
-            --primary-dark: #3d6b5a;
-            --secondary: #f5e6d3;
-            --accent: #d4a574;
+            --primary: #C9A66B;
+            --primary-dark: #A8864A;
+            --primary-light: #E8D5B5;
+            --secondary: #1A1A1A;
+            --accent: #D4AF37;
             --text-dark: #2d2d2d;
             --text-light: #555;
             --text-muted: #777;
             --white: #ffffff;
+            --black: #0D0D0D;
             --bg-light: #fafafa;
-            --bg-section: #f8f5f2;
+            --bg-section: #FBF8F3;
+            --bg-dark: #121212;
+            --gold-gradient: linear-gradient(135deg, #C9A66B 0%, #D4AF37 50%, #E8D5B5 100%);
             --shadow: 0 4px 20px rgba(0,0,0,0.08);
             --shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-gold: 0 4px 20px rgba(201, 166, 107, 0.3);
             --radius: 12px;
             --transition: all 0.3s ease;
         }
@@ -43,14 +48,14 @@
 
         /* Header */
         header {
-            background: var(--white);
-            padding: 15px 5%;
+            background: var(--black);
+            padding: 12px 5%;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.3);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -63,14 +68,15 @@
         }
 
         .logo img {
-            height: 50px;
+            height: 55px;
             width: auto;
         }
 
         .logo-text {
             font-size: 1.4rem;
             font-weight: 600;
-            color: var(--text-dark);
+            color: var(--primary);
+            letter-spacing: 0.5px;
         }
 
         nav {
@@ -80,28 +86,31 @@
 
         nav a {
             text-decoration: none;
-            color: var(--text-light);
+            color: var(--white);
             font-weight: 500;
             font-size: 0.95rem;
             transition: var(--transition);
+            opacity: 0.85;
         }
 
         nav a:hover {
             color: var(--primary);
+            opacity: 1;
         }
 
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--white);
         }
 
         /* Hero Section */
         .hero {
-            margin-top: 80px;
+            margin-top: 79px;
             height: 85vh;
             min-height: 600px;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
                         url('https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
             display: flex;
             align-items: center;
@@ -115,14 +124,19 @@
             font-size: 3.2rem;
             font-weight: 700;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
         }
 
         .hero-content p {
             font-size: 1.3rem;
             margin-bottom: 35px;
             font-weight: 300;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+            color: var(--primary-light);
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
         }
 
         .hero-buttons {
@@ -142,24 +156,24 @@
         }
 
         .btn-primary {
-            background: var(--primary);
-            color: var(--white);
+            background: var(--gold-gradient);
+            color: var(--black);
         }
 
         .btn-primary:hover {
-            background: var(--primary-dark);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
         }
 
         .btn-secondary:hover {
-            background: var(--white);
-            color: var(--text-dark);
+            background: var(--primary);
+            color: var(--black);
         }
 
         /* Sections */
@@ -212,11 +226,13 @@
             box-shadow: var(--shadow);
             text-align: center;
             transition: var(--transition);
+            border-bottom: 3px solid transparent;
         }
 
         .pillar-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
+            box-shadow: var(--shadow-gold);
+            border-bottom: 3px solid var(--primary);
         }
 
         .pillar-icon {
@@ -227,7 +243,7 @@
         .pillar-card h3 {
             font-size: 1.3rem;
             margin-bottom: 12px;
-            color: var(--text-dark);
+            color: var(--primary-dark);
         }
 
         .pillar-card p {
@@ -254,8 +270,8 @@
             height: 280px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--secondary);
-            box-shadow: var(--shadow);
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 30px rgba(201, 166, 107, 0.3);
         }
 
         .about-content h3 {
@@ -302,11 +318,12 @@
         }
 
         .tag {
-            background: var(--secondary);
+            background: var(--primary-light);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
-            color: var(--text-dark);
+            color: var(--primary-dark);
+            border: 1px solid var(--primary);
         }
 
         /* Why Choose Section */
@@ -329,13 +346,13 @@
 
         .why-card:hover {
             transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
+            box-shadow: var(--shadow-gold);
         }
 
         .why-card h3 {
             font-size: 1.15rem;
             margin-bottom: 12px;
-            color: var(--text-dark);
+            color: var(--primary-dark);
         }
 
         .why-card p {
@@ -371,11 +388,13 @@
             text-align: center;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            border: 1px solid transparent;
         }
 
         .service-card:hover {
             transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
+            box-shadow: var(--shadow-gold);
+            border: 1px solid var(--primary);
         }
 
         .service-icon {
@@ -397,12 +416,19 @@
         }
 
         .format-card {
-            background: var(--primary);
-            color: var(--white);
+            background: var(--secondary);
+            color: var(--primary);
             padding: 25px 40px;
             border-radius: var(--radius);
             text-align: center;
             min-width: 200px;
+            border: 2px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .format-card:hover {
+            background: var(--primary);
+            color: var(--black);
         }
 
         .format-card h4 {
@@ -412,7 +438,7 @@
 
         /* Trial CTA Section */
         .trial-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: var(--secondary);
             color: var(--white);
             text-align: center;
             padding: 70px 5%;
@@ -421,17 +447,19 @@
         .trial-section h2 {
             font-size: 2rem;
             margin-bottom: 15px;
+            color: var(--primary);
         }
 
         .trial-section p {
             font-size: 1.1rem;
+            color: var(--primary-light);
             margin-bottom: 30px;
             opacity: 0.95;
         }
 
         .btn-trial {
-            background: var(--white);
-            color: var(--primary);
+            background: var(--gold-gradient);
+            color: var(--black);
             padding: 16px 45px;
             border-radius: 50px;
             font-weight: 600;
@@ -442,7 +470,7 @@
 
         .btn-trial:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            box-shadow: var(--shadow-gold);
         }
 
         /* Collaborations Section */
@@ -473,6 +501,13 @@
             box-shadow: var(--shadow);
             font-weight: 500;
             color: var(--text-dark);
+            border: 1px solid var(--primary-light);
+            transition: var(--transition);
+        }
+
+        .collab-tag:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-gold);
         }
 
         /* Testimonials */
@@ -489,10 +524,11 @@
             padding: 35px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
+            border-top: 3px solid var(--primary);
         }
 
         .testimonial-stars {
-            color: #ffc107;
+            color: var(--primary);
             font-size: 1.2rem;
             margin-bottom: 15px;
         }
@@ -591,8 +627,8 @@
         }
 
         .btn-submit {
-            background: var(--primary);
-            color: var(--white);
+            background: var(--gold-gradient);
+            color: var(--black);
             border: none;
             padding: 15px 40px;
             border-radius: 50px;
@@ -603,7 +639,8 @@
         }
 
         .btn-submit:hover {
-            background: var(--primary-dark);
+            box-shadow: var(--shadow-gold);
+            transform: translateY(-2px);
         }
 
         .contact-info h3 {
@@ -624,7 +661,7 @@
             font-size: 1.3rem;
             width: 45px;
             height: 45px;
-            background: var(--secondary);
+            background: var(--primary-light);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -636,20 +673,25 @@
             text-decoration: none;
         }
 
+        .contact-item a:hover {
+            color: var(--primary-dark);
+        }
+
         .availability-note {
-            background: var(--secondary);
+            background: var(--primary-light);
             padding: 20px;
             border-radius: var(--radius);
             margin-top: 30px;
+            border-left: 4px solid var(--primary);
         }
 
         .availability-note h4 {
-            color: var(--text-dark);
+            color: var(--primary-dark);
             margin-bottom: 8px;
         }
 
         .availability-note p {
-            color: var(--text-light);
+            color: var(--text-dark);
             font-size: 0.95rem;
         }
 
@@ -671,7 +713,7 @@
         .footer-section h4 {
             font-size: 1.1rem;
             margin-bottom: 20px;
-            color: var(--white);
+            color: var(--primary);
         }
 
         .footer-section a {
@@ -684,7 +726,7 @@
         }
 
         .footer-section a:hover {
-            color: var(--white);
+            color: var(--primary);
         }
 
         .social-links {
@@ -707,12 +749,13 @@
 
         .social-link:hover {
             background: var(--primary);
+            color: var(--black);
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid #444;
+            border-top: 1px solid var(--primary-dark);
             color: #888;
             font-size: 0.9rem;
         }
@@ -740,10 +783,10 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: var(--white);
+                background: var(--black);
                 flex-direction: column;
                 padding: 20px;
-                box-shadow: var(--shadow);
+                box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             }
 
             nav.active {
@@ -791,7 +834,7 @@
 <!-- Header -->
 <header>
     <div class="logo">
-        <img src="logo.png" alt="Mihika's Yoga Logo">
+        <img src="logo-cropped.png" alt="Mihika's Yoga Logo">
         <span class="logo-text">Mihika's Yog Studio</span>
     </div>
     <nav id="nav">
