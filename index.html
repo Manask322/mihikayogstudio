@@ -3,215 +3,1195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mihika's Yog Studio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Mihika's Yog Studio | Holistic & Personalised Yoga Training</title>
+    <meta name="description" content="Transform your body, mind & spirit with personalized yoga training by Mihika Pinjarkar - National Yoga Champion & World Record Holder">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+        :root {
+            --primary: #5a8f7b;
+            --primary-dark: #3d6b5a;
+            --secondary: #f5e6d3;
+            --accent: #d4a574;
+            --text-dark: #2d2d2d;
+            --text-light: #555;
+            --text-muted: #777;
+            --white: #ffffff;
+            --bg-light: #fafafa;
+            --bg-section: #f8f5f2;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            color: #333;
-            background: #fafafa;
+            box-sizing: border-box;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        /* Header */
         header {
-            background: white;
-            padding: 25px 15px;
-            text-align: center;
-            border-bottom: 2px solid #eee;
+            background: var(--white);
+            padding: 15px 5%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            color: #2d2d2d;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        nav {
-            margin-top: 10px;
+
+        .logo img {
+            height: 50px;
+            width: auto;
         }
-        nav a {
-            margin: 0 12px;
-            text-decoration: none;
-            color: #444;
+
+        .logo-text {
+            font-size: 1.4rem;
             font-weight: 600;
+            color: var(--text-dark);
         }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
         .hero {
-            background: url("https://images.pexels.com/photos/3822939/pexels-photo-3822939.jpeg?auto=compress&cs=tinysrgb&w=1200") center/cover no-repeat;
-            height: 360px;
+            margin-top: 80px;
+            height: 85vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
+                        url('https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            text-shadow: 0 0 12px #000;
+            text-align: center;
+            color: var(--white);
+            padding: 20px;
         }
-        .hero h2 {
-            font-size: 2.6rem;
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
         }
-        .container {
-            padding: 60px 20px;
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            font-weight: 300;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
         }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--text-dark);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 5%;
+        }
+
+        .section-alt {
+            background: var(--bg-section);
+        }
+
         .section-title {
             text-align: center;
             font-size: 2.2rem;
-            color: #444;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.05rem;
+        }
+
+        /* Welcome Section */
+        .welcome-text {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        /* Pillars */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pillar-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .pillar-icon {
+            font-size: 3rem;
             margin-bottom: 20px;
         }
-        .services, .gallery {
+
+        .pillar-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .pillar-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about-container {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary);
+            box-shadow: var(--shadow);
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .about-content .title {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .credential {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.92rem;
+            color: var(--text-light);
+        }
+
+        .credential-icon {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .experience-tags {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: var(--secondary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+        }
+
+        /* Why Choose Section */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .why-card {
+            background: var(--white);
+            padding: 35px 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .why-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .why-card p {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+        }
+
+        /* Services Section */
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 40px 0 25px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card h4 {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .formats-grid {
+            display: flex;
             justify-content: center;
-            gap: 18px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
-        .card {
-            width: 280px;
-            margin: 10px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 1px 6px rgba(0,0,0,0.1);
-            overflow: hidden;
+
+        .format-card {
+            background: var(--primary);
+            color: var(--white);
+            padding: 25px 40px;
+            border-radius: var(--radius);
+            text-align: center;
+            min-width: 200px;
         }
-        .card img {
-            width: 100%;
-            height: 190px;
-            object-fit: cover;
+
+        .format-card h4 {
+            font-size: 1.05rem;
+            font-weight: 500;
         }
-        .card h3 {
-            margin: 15px;
-            font-size: 1.3rem;
-            color: #2a2a2a;
+
+        /* Trial CTA Section */
+        .trial-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 70px 5%;
         }
-        .card p {
-            margin: 0 15px 15px;
-            font-size: .98rem;
-            color: #555;
+
+        .trial-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
         }
+
+        .trial-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn-trial {
+            background: var(--white);
+            color: var(--primary);
+            padding: 16px 45px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .btn-trial:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Collaborations Section */
+        .collab-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .collab-content p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .collab-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .collab-tag {
+            background: var(--white);
+            padding: 15px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 0.98rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Instagram Section */
         .instagram-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             margin: 30px auto;
         }
+
         .instagram-grid blockquote {
             margin: 0 !important;
             min-width: 326px;
         }
-        footer {
-            background: #222;
-            color: white;
-            padding: 25px 20px;
+
+        .instagram-follow {
             text-align: center;
-            font-size: .95rem;
+            margin-top: 25px;
         }
-        footer a {
-            color: #ffdd57;
+
+        .instagram-follow a {
+            color: var(--primary);
+            font-weight: 600;
             text-decoration: none;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-dark);
+        }
+
+        .contact-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .contact-icon {
+            font-size: 1.3rem;
+            width: 45px;
+            height: 45px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .availability-note {
+            background: var(--secondary);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-top: 30px;
+        }
+
+        .availability-note h4 {
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .availability-note p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 50px 5% 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-section a {
+            display: block;
+            color: #aaa;
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: #444;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 60px 5%;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .about-image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .experience-tags {
+                justify-content: center;
+            }
+
+            .formats-grid {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
 
+<!-- Header -->
 <header>
-    <h1>Mihika's Yog Studio</h1>
-    <nav>
+    <div class="logo">
+        <img src="logo.png" alt="Mihika's Yoga Logo">
+        <span class="logo-text">Mihika's Yog Studio</span>
+    </div>
+    <nav id="nav">
+        <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#services">Classes</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#instagram">Instagram</a>
-        <a href="#youtube">YouTube</a>
+        <a href="#services">Services</a>
+        <a href="#why-choose">Why Choose Me</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
     </nav>
+    <div class="mobile-menu" onclick="toggleMenu()">&#9776;</div>
 </header>
 
-<section class="hero">
-    <h2>Balance • Strength • Inner Peace</h2>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Holistic & Personalised Yoga Training</h1>
+        <p>Transform Your Body, Mind & Spirit with Expert Guidance</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Book 2-Day Trial</a>
+            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        </div>
+    </div>
 </section>
 
-<section id="about" class="container">
-    <div class="section-title">About Us</div>
-    <p style="max-width: 900px; margin: auto; text-align: center; font-size: 1.1rem;">
-        Welcome to <strong>Mihika's Yog Studio</strong> — a dedicated space for yoga, pilates, nutrition guidance, and mindful movement. We help you grow physically and mentally through calm, focused, and joyful practice. Join our community and transform your lifestyle!
+<!-- Welcome Section -->
+<section class="section">
+    <h2 class="section-title">Welcome to Your Wellness Journey</h2>
+    <p class="welcome-text">
+        At Mihika's Yog Studio, we believe yoga should adapt to you — not the other way around. 
+        Our personalized approach combines traditional yogic wisdom with modern lifestyle needs, 
+        helping you grow physically and mentally through calm, focused, and joyful practice.
     </p>
-</section>
-
-<section id="services" class="container">
-    <div class="section-title">Our Classes & Services</div>
-    <div class="services">
-        <div class="card">
-            <img src="https://images.pexels.com/photos/3822939/pexels-photo-3822939.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yoga session">
-            <h3>🧘‍♀️ Yoga Sessions</h3>
-            <p>Renew your mind and body with sessions designed for all levels — from beginners to advanced yogis.</p>
+    
+    <div class="pillars-grid">
+        <div class="pillar-card">
+            <div class="pillar-icon">💪</div>
+            <h3>Physical Health</h3>
+            <p>Build strength, improve flexibility, and correct posture through mindful movement and asanas.</p>
         </div>
-        <div class="card">
-            <img src="https://images.pexels.com/photos/4056535/pexels-photo-4056535.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pilates">
-            <h3>🏃‍♀️ Pilates & Fitness</h3>
-            <p>Strengthen your core, improve posture, and enhance flexibility through focused pilates workouts.</p>
+        <div class="pillar-card">
+            <div class="pillar-icon">🧠</div>
+            <h3>Mental Wellness</h3>
+            <p>Release stress, find emotional balance, and cultivate a calm, focused mind.</p>
         </div>
-        <div class="card">
-            <img src="https://images.pexels.com/photos/3757957/pexels-photo-3757957.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Meditation">
-            <h3>🧘 Meditation & Breathwork</h3>
-            <p>Relax and relieve stress with guided meditation, breathwork sessions, and mindful practices.</p>
+        <div class="pillar-card">
+            <div class="pillar-icon">🌿</div>
+            <h3>Mindful Living</h3>
+            <p>Develop breath awareness, inner peace, and a deeper connection with yourself.</p>
         </div>
     </div>
 </section>
 
-<section id="gallery" class="container">
-    <div class="section-title">Studio Gallery</div>
-    <div class="gallery">
-        <div class="card">
-            <img src="https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yoga class group"> 
+<!-- About Section -->
+<section id="about" class="section section-alt">
+    <h2 class="section-title">Meet Your Instructor</h2>
+    <div class="about-container">
+        <div class="about-image">
+            <img src="https://images.pexels.com/photos/3822583/pexels-photo-3822583.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mihika Pinjarkar">
         </div>
-        <div class="card">
-            <img src="https://images.pexels.com/photos/3822668/pexels-photo-3822668.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yoga pose">
-        </div>
-        <div class="card">
-            <img src="https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Relaxation session">
+        <div class="about-content">
+            <h3>Mihika Pinjarkar</h3>
+            <p class="title">Yoga & Pilates Instructor | Yoga Therapist | Nutritionist</p>
+            <p>
+                I'm deeply passionate about helping individuals discover the transformative power of yoga. 
+                With a focus on personalized attention and conscious teaching, I design practices that 
+                address your unique concerns, goals, and lifestyle. My approach ensures that yoga adapts 
+                to the person — bringing balance, strength, and inner peace to every student.
+            </p>
+            
+            <div class="credentials-grid">
+                <div class="credential">
+                    <span class="credential-icon">✓</span>
+                    <span>MSc Yoga, S-VYASA University</span>
+                </div>
+                <div class="credential">
+                    <span class="credential-icon">✓</span>
+                    <span>National Yoga Champion</span>
+                </div>
+                <div class="credential">
+                    <span class="credential-icon">✓</span>
+                    <span>3x World Record Holder (ABYM)</span>
+                </div>
+                <div class="credential">
+                    <span class="credential-icon">✓</span>
+                    <span>Noble World Record Holder</span>
+                </div>
+                <div class="credential">
+                    <span class="credential-icon">✓</span>
+                    <span>Certified International Nutritionist</span>
+                </div>
+                <div class="credential">
+                    <span class="credential-icon">✓</span>
+                    <span>300hrs Yoga Instructor Certification</span>
+                </div>
+                <div class="credential">
+                    <span class="credential-icon">✓</span>
+                    <span>Certified Mat Pilates Instructor</span>
+                </div>
+                <div class="credential">
+                    <span class="credential-icon">✓</span>
+                    <span>Languages: English, Hindi, Marathi</span>
+                </div>
+            </div>
+            
+            <div class="experience-tags">
+                <span class="tag">CultFit Trainer</span>
+                <span class="tag">400+ Students Trained</span>
+                <span class="tag">100+ Personal Clients</span>
+                <span class="tag">School Yoga Programs</span>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="instagram" class="container">
-    <div class="section-title">From Our Instagram</div>
+<!-- Why Choose Me Section -->
+<section id="why-choose" class="section">
+    <h2 class="section-title">Why Choose Me?</h2>
+    <p class="section-subtitle">Deep personal attention and conscious teaching that transforms lives</p>
+    
+    <div class="why-grid">
+        <div class="why-card">
+            <h3>Personalized Approach</h3>
+            <p>Custom yoga plans designed based on your body type, concerns, goals, and lifestyle. No generic programs here.</p>
+        </div>
+        <div class="why-card">
+            <h3>Multi-Style Expertise</h3>
+            <p>Proficient in Hatha, Vinyasa, Aqua, Chair, Stick Yoga, and more. Your practice draws from the best of each style.</p>
+        </div>
+        <div class="why-card">
+            <h3>Holistic Focus</h3>
+            <p>Equal emphasis on body, breath, and mind. Every session is designed for complete well-being, not just poses.</p>
+        </div>
+        <div class="why-card">
+            <h3>Proven Results</h3>
+            <p>National champion with world records. My expertise is backed by achievements and hundreds of transformed lives.</p>
+        </div>
+    </div>
+</section>
 
+<!-- Services Section -->
+<section id="services" class="section section-alt">
+    <h2 class="section-title">Services & Offerings</h2>
+    <p class="section-subtitle">A complete yoga ecosystem tailored to your needs</p>
+    
+    <div class="services-container">
+        <h3 class="services-subtitle">Yoga Styles & Practices</h3>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🧘‍♀️</div>
+                <h4>Hatha Yoga</h4>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌊</div>
+                <h4>Vinyasa Yoga</h4>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h4>Evolve Yoga</h4>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🪑</div>
+                <h4>Chair Yoga</h4>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💧</div>
+                <h4>Aqua Yoga</h4>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🥢</div>
+                <h4>Stick Yoga</h4>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💆‍♀️</div>
+                <h4>Yoga Therapy</h4>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧘</div>
+                <h4>Meditation</h4>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌬️</div>
+                <h4>Pranayama</h4>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌸</div>
+                <h4>Shatkriyas</h4>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h4>Corporate Yoga</h4>
+            </div>
+        </div>
+        
+        <h3 class="services-subtitle">Session Formats</h3>
+        <div class="formats-grid">
+            <div class="format-card">
+                <h4>💻 Online Sessions</h4>
+            </div>
+            <div class="format-card">
+                <h4>🏠 Offline Studio</h4>
+            </div>
+            <div class="format-card">
+                <h4>👤 Personal Training</h4>
+            </div>
+            <div class="format-card">
+                <h4>👥 Group Classes</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trial CTA Section -->
+<section class="trial-section">
+    <h2>Start with a 2-Day Trial Class</h2>
+    <p>Experience the difference before you commit. Try our personalized yoga sessions and feel the transformation.</p>
+    <a href="#contact" class="btn-trial">Book Your Free Trial</a>
+</section>
+
+<!-- Collaborations Section -->
+<section id="collaborations" class="section">
+    <h2 class="section-title">Collaborations & Workshops</h2>
+    <div class="collab-content">
+        <p>
+            Open for paid collaborations, workshops, and special programs. 
+            Let's create impactful wellness experiences together.
+        </p>
+        <div class="collab-tags">
+            <div class="collab-tag">🏢 Corporate Workshops</div>
+            <div class="collab-tag">🏫 School Programs</div>
+            <div class="collab-tag">🎉 Special Events</div>
+            <div class="collab-tag">🤝 Brand Collaborations</div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="section section-alt">
+    <h2 class="section-title">What My Clients Say</h2>
+    <p class="section-subtitle">Real transformations from real people</p>
+    
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+                "Mihika's personalized approach completely transformed my practice. My posture has improved dramatically, 
+                and I feel more flexible and strong than ever. Her attention to detail and genuine care makes every session valuable."
+            </p>
+            <p class="testimonial-author">— Client Name</p>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+                "After struggling with back pain for years, Mihika designed a yoga therapy program specifically for me. 
+                Within weeks, I noticed significant relief. She truly understands how to adapt yoga for individual needs."
+            </p>
+            <p class="testimonial-author">— Client Name</p>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+                "The mental calm I've found through her meditation and breathwork sessions is incredible. 
+                Mihika's teaching goes beyond just poses — she helps you find balance in all aspects of life."
+            </p>
+            <p class="testimonial-author">— Client Name</p>
+        </div>
+    </div>
+</section>
+
+<!-- Instagram Section -->
+<section class="section">
+    <h2 class="section-title">Follow the Journey</h2>
+    <p class="section-subtitle">Stay connected for yoga tips, inspiration, and updates</p>
+    
     <div class="instagram-grid">
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DS9txHBEpA5/" data-instgrm-version="14"></blockquote>
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DS30rbqkmKI/" data-instgrm-version="14"></blockquote>
     </div>
     <script async src="//www.instagram.com/embed.js"></script>
-
-    <p style="text-align: center; margin-top: 18px;">
-        Follow us on Instagram: <a href="https://www.instagram.com/mihikas_yog_studio/" target="_blank">@mihikas_yog_studio</a>
+    
+    <p class="instagram-follow">
+        Follow on Instagram: <a href="https://www.instagram.com/mihikas_yog_studio/" target="_blank">@mihikas_yog_studio</a>
     </p>
 </section>
 
-<section id="youtube" class="container">
-    <div class="section-title">Watch on YouTube</div>
+<!-- Contact Section -->
+<section id="contact" class="section section-alt">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-subtitle">Ready to begin your transformation? Reach out today.</p>
     
-    <div style="text-align: center; margin: 30px auto;">
-        <a href="https://www.youtube.com/channel/UC1VpK9utW1VU0pRc9qsfO3A" target="_blank" style="display: inline-block; background: #FF0000; color: white; padding: 18px 40px; font-size: 1.2rem; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 15px rgba(255,0,0,0.3); transition: transform 0.2s;">
-            ▶️ Visit Our YouTube Channel
-        </a>
+    <div class="contact-container">
+        <div class="contact-form">
+            <h3>Send a Message</h3>
+            <form action="https://formspree.io/f/placeholder" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your goals or questions..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+        
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div>
+                    <strong>Phone</strong><br>
+                    <a href="tel:+917507011335">+91 7507011335</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div>
+                    <strong>Email</strong><br>
+                    <a href="mailto:mihikapinjarkar21@gmail.com">mihikapinjarkar21@gmail.com</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">📸</div>
+                <div>
+                    <strong>Instagram</strong><br>
+                    <a href="https://www.instagram.com/mihikas_yog_studio/" target="_blank">@mihikas_yog_studio</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">🎥</div>
+                <div>
+                    <strong>YouTube</strong><br>
+                    <a href="https://www.youtube.com/channel/UC1VpK9utW1VU0pRc9qsfO3A" target="_blank">Mihika's Yog Studio</a>
+                </div>
+            </div>
+            
+            <div class="availability-note">
+                <h4>Availability</h4>
+                <p>Available for both Online & Offline sessions. Contact for schedule and details.</p>
+            </div>
+        </div>
     </div>
-    
-    <p style="text-align: center; margin-top: 20px; font-size: 1.05rem;">
-        Subscribe for yoga tutorials, meditation sessions, and wellness tips! 🎥
-    </p>
 </section>
 
-<section id="contact" class="container">
-    <div class="section-title">Contact Us</div>
-    <p style="text-align: center; font-size: 1.05rem;">
-        Get in touch for class updates, private sessions, and more:  
-    </p>
-    <p style="text-align: center; font-size: 1rem; margin-top: 12px;">
-        📞 Phone: +91-XXXXXXXXXX<br>
-        📧 Email: mihikayogastudio@example.com<br>
-        📍 Instagram: <a href="https://www.instagram.com/mihikas_yog_studio/" target="_blank">@mihikas_yog_studio</a><br>
-        🎥 YouTube: <a href="https://www.youtube.com/channel/UC1VpK9utW1VU0pRc9qsfO3A" target="_blank">Mihika's Yog Studio</a>
-    </p>
-</section>
-
+<!-- Footer -->
 <footer>
-    <p>&copy; 2026 Mihika's Yog Studio — All Rights Reserved.</p>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Mihika's Yog Studio</h4>
+            <p style="color: #aaa; font-size: 0.9rem;">
+                Holistic & personalized yoga training for body, mind, and spirit transformation.
+            </p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-section">
+            <h4>Services</h4>
+            <a href="#services">Online Sessions</a>
+            <a href="#services">Personal Training</a>
+            <a href="#services">Group Classes</a>
+            <a href="#collaborations">Workshops</a>
+        </div>
+        <div class="footer-section">
+            <h4>Connect</h4>
+            <div class="social-links">
+                <a href="https://www.instagram.com/mihikas_yog_studio/" target="_blank" class="social-link">📸</a>
+                <a href="https://www.youtube.com/channel/UC1VpK9utW1VU0pRc9qsfO3A" target="_blank" class="social-link">🎥</a>
+                <a href="mailto:mihikapinjarkar21@gmail.com" class="social-link">📧</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Mihika's Yog Studio — All Rights Reserved</p>
+    </div>
 </footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('nav').classList.toggle('active');
+    }
+</script>
 
 </body>
 </html>
