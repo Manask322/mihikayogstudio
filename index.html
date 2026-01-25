@@ -684,6 +684,67 @@
             transform: translateY(-2px);
         }
 
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .contact-btn span {
+            font-size: 1.3rem;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .email-btn {
+            background: var(--bg-card);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .email-btn:hover {
+            background: var(--primary);
+            color: var(--black);
+            transform: translateY(-2px);
+        }
+
+        .phone-btn {
+            background: var(--gold-gradient);
+            color: var(--black);
+        }
+
+        .phone-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .instagram-btn {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+        }
+
+        .instagram-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(225, 48, 108, 0.3);
+        }
+
         .contact-info h3 {
             font-size: 1.4rem;
             margin-bottom: 25px;
@@ -1189,26 +1250,24 @@
     
     <div class="contact-container">
         <div class="contact-form">
-            <h3>Send a Message</h3>
-            <form action="https://formspree.io/f/placeholder" method="POST">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" placeholder="Tell me about your goals or questions..." required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Send Message</button>
-            </form>
+            <h3>Get in Touch</h3>
+            <p style="color: var(--text-muted); margin-bottom: 25px;">Choose your preferred way to connect:</p>
+            
+            <a href="https://wa.me/917507011335?text=Hi%20Mihika,%20I'm%20interested%20in%20yoga%20classes.%20Please%20share%20more%20details." target="_blank" class="contact-btn whatsapp-btn">
+                <span>💬</span> Message on WhatsApp
+            </a>
+            
+            <a href="mailto:mihikapinjarkar21@gmail.com?subject=Yoga%20Class%20Inquiry&body=Hi%20Mihika,%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20yoga%20classes.%0A%0APlease%20share%20details%20about:%0A-%20Class%20schedules%0A-%20Pricing%0A-%202-day%20trial%0A%0AThank%20you!" class="contact-btn email-btn">
+                <span>📧</span> Send an Email
+            </a>
+            
+            <a href="tel:+917507011335" class="contact-btn phone-btn">
+                <span>📞</span> Call Now
+            </a>
+            
+            <a href="https://www.instagram.com/mihikas_yog_studio/" target="_blank" class="contact-btn instagram-btn">
+                <span>📸</span> DM on Instagram
+            </a>
         </div>
         
         <div class="contact-info">
